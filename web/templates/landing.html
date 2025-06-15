@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Müşteri Hizmetleri ChatBot</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="landing-container">
+        <div class="stars"></div>
+        <div class="stars2"></div>
+        <div class="stars3"></div>
+        
+        <div class="content-wrapper">
+            <div class="header">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h1>Müşteri Hizmetleri <span>ChatBot</span></h1>
+                </div>
+            </div>
+            
+            <div class="main-content">
+                <div class="intro-section">
+                    <h2 class="intro-title">Yapay Zeka Destekli <span>Müşteri Deneyimi</span></h2>
+                    <p class="intro-text">
+                        7/24 hizmet veren, çoklu sektör desteği sunan ve gerçek zamanlı yanıtlar veren 
+                        yapay zeka asistanımız ile tanışın. Havalimanı, kargo ve restoran hizmetlerine 
+                        dair tüm sorularınız için buradayız.
+                    </p>
+                    <div class="cta-button">
+                        <a href="/chat" class="btn-start-chat">
+                            <span class="btn-text">Konuşmaya Başla</span>
+                            <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="features-section">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <h3>Havalimanı Hizmetleri</h3>
+                        <p>Uçuş bilgileri, bagaj takibi ve havalimanı hizmetleri hakkında anlık bilgi.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3>Kargo Takip</h3>
+                        <p>Kargo takip numaranızla teslimat durumunu ve beklenen varış zamanını öğrenin.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3>Restoran Hizmetleri</h3>
+                        <p>Sipariş takibi ve rezervasyon bilgilerini sorgulayın.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p>&copy; 2024 Müşteri Hizmetleri ChatBot | Tüm Hakları Saklıdır</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

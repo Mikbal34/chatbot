@@ -1,0 +1,309 @@
+/* Ana Stiller */
+:root {
+    --primary-color: #4C6EF5;
+    --secondary-color: #0095ff;
+    --accent-color: #6c5ce7;
+    --text-color: #e2e8f0;
+    --light-text: #a0aec0;
+    --bg-color: #0f172a;
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --border-color: rgba(76, 110, 245, 0.3);
+    --success-color: #22c55e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Yıldızlı Arkaplan Animasyonları */
+.landing-container {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.stars, .stars2, .stars3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.stars {
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png') repeat;
+    animation: animateStars 50s linear infinite;
+}
+
+.stars2 {
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars2.png') repeat;
+    animation: animateStars 100s linear infinite;
+}
+
+.stars3 {
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars3.png') repeat;
+    animation: animateStars 150s linear infinite;
+}
+
+@keyframes animateStars {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-1000px);
+    }
+}
+
+/* İçerik Alanı */
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Üst Başlık */
+.header {
+    margin-bottom: 3rem;
+    padding-top: 2rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    margin-right: 1.5rem;
+    box-shadow: 0 10px 20px rgba(76, 110, 245, 0.3);
+}
+
+.logo-container h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff, #a0aec0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo-container h1 span {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Ana İçerik */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 1rem 0;
+}
+
+/* Giriş Bölümü */
+.intro-section {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.intro-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.intro-title span {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    color: var(--light-text);
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* CTA Buton */
+.cta-button {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.btn-start-chat {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(76, 110, 245, 0.3);
+}
+
+.btn-start-chat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(76, 110, 245, 0.4);
+}
+
+.btn-text {
+    margin-right: 1rem;
+}
+
+.btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+/* Özellikler Bölümü */
+.features-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.feature-card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.feature-card p {
+    color: var(--light-text);
+    font-size: 0.95rem;
+}
+
+/* Alt Bilgi */
+.footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--light-text);
+    font-size: 0.9rem;
+}
+
+/* Duyarlı Tasarım */
+@media (max-width: 991px) {
+    .intro-title {
+        font-size: 2.2rem;
+    }
+    
+    .logo-container h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .intro-title {
+        font-size: 2rem;
+    }
+    
+    .intro-text {
+        font-size: 1rem;
+    }
+    
+    .btn-start-chat {
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        margin-bottom: 2rem;
+    }
+    
+    .logo-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .logo-container h1 {
+        font-size: 1.5rem;
+    }
+    
+    .intro-title {
+        font-size: 1.8rem;
+    }
+    
+    .main-content {
+        gap: 2rem;
+    }
+} 
