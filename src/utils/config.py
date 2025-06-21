@@ -103,7 +103,17 @@ class Config:
         Returns:
             Yapılandırma değeri veya varsayılan değer
         """
-        return self._config.get(key, default)
+        value = self._config.get(key, default)
+        
+        # API key özel kontrolü
+        if key == "OPENAI_API_KEY" and value:
+            if value in ["your-api-key-here", "our-api-key-here", "BURAYA_GERCEK_API_KEY_YAZIN"]:
+                logger.error("🚨 OpenAI API key hâlâ placeholder değer! Lütfen gerçek API key'inizi .env dosyasına yazın.")
+                return None
+            elif not value.startswith("sk-"):
+                logger.warning("⚠️ OpenAI API key formatı şüpheli. 'sk-' ile başlamalı.")
+        
+        return value
         
     def set(self, key: str, value: str) -> None:
         """

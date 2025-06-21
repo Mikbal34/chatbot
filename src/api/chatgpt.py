@@ -40,8 +40,12 @@ class ChatGPTIntegration:
         try:
             api_key = self.config.get("OPENAI_API_KEY")
             if not api_key:
-                logger.error("OpenAI API anahtarı bulunamadı")
-                raise ValueError("OpenAI API anahtarı gerekli")
+                logger.error("🚨 OpenAI API anahtarı bulunamadı veya placeholder değer!")
+                raise ValueError(
+                    "OpenAI API anahtarı gerekli!\n"
+                    "Lütfen .env dosyasındaki OPENAI_API_KEY değerini gerçek API key'iniz ile değiştirin.\n"
+                    "API key'i https://platform.openai.com/api-keys adresinden alabilirsiniz."
+                )
                 
             self.client = openai.OpenAI(api_key=api_key)
             logger.debug("OpenAI istemcisi başlatıldı")

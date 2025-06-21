@@ -8,18 +8,19 @@ import sys
 import shutil
 
 def fix_env_file():
-    """example.env dosyasını .env olarak kopyalar"""
+    """example.env dosyasını .env olarak kopyalar (sadece .env yoksa)"""
     print("Çevre değişkenleri dosyası (.env) kontrol ediliyor...")
     
     if not os.path.exists(".env"):
         if os.path.exists("example.env"):
             shutil.copy("example.env", ".env")
             print("✅ example.env dosyası .env olarak kopyalandı")
+            print("⚠️ Lütfen .env dosyasındaki OPENAI_API_KEY değerini gerçek API key'iniz ile değiştirin!")
         else:
             print("⚠️ example.env dosyası bulunamadı!")
             return False
     else:
-        print("✅ .env dosyası zaten mevcut")
+        print("✅ .env dosyası zaten mevcut - API key korunuyor")
     
     return True
 
